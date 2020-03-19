@@ -1,0 +1,50 @@
+intents:
+  - check_symptoms:
+      use_entities: []
+  - chitchat:
+      use_entities: []
+  - inform
+  - affirm
+  - deny
+  - stop
+  - thankyou
+  - greet
+  - bot_challenge
+
+entities:
+  - fever_present
+  - cough_present
+
+slots:
+  fever_present:
+    type: bool
+  cough_present:
+    type: bool
+
+responses:
+  utter_ask_fever:
+    - text: "do you have a fever?"
+  utter_ask_cough:
+    - text: "do you have a cough?"
+  utter_slots_values:
+    - text: "It looks like you have the following symptoms:\n
+             - cough: {cough_present}\n
+             - fever: {fever_present}"
+  utter_noworries:
+    - text: "you are welcome :)"
+  utter_chitchat:
+    - text: "chitchat"
+  utter_ask_continue:
+    - text: "do you want to continue?"
+  utter_default:
+    - text: "sorry, I didn't understand you, please try input something else"
+  utter_greet:
+    - text: "Hello! I can check you for Corona symptoms! How can I help?"
+  utter_iamabot:
+    - text: "I am a bot, powered by Rasa."
+
+forms:
+  - check_symptoms
+
+actions:
+  - symptom_form
