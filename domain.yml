@@ -17,14 +17,14 @@ entities:
 
 slots:
   fever_present:
-    type: bool
+    type: unfeaturized
   cough_present:
-    type: bool
+    type: unfeaturized
 
 responses:
-  utter_ask_fever:
+  utter_ask_fever_present:
     - text: "do you have a fever?"
-  utter_ask_cough:
+  utter_ask_cough_present:
     - text: "do you have a cough?"
   utter_slots_values:
     - text: "It looks like you have the following symptoms:\n
@@ -44,7 +44,4 @@ responses:
     - text: "I am a bot, powered by Rasa."
 
 forms:
-  - check_symptoms
-
-actions:
   - symptom_form

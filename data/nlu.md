@@ -32,11 +32,11 @@
 - im not feeling well
 - i feel bad
 - im sick
-- i have got a [fever](fever_present:yes)
-- my temperature is [high](fever_present:yes)
-- i have a [cough](cough_present:yes)
-- im [coughing](cough_present:yes)
-- im [coughing](cough_present:yes)
+- i have got a [fever](fever_present:True)
+- my temperature is [high](fever_present:True)
+- i have a [cough](cough_present:True)
+- im [coughing](cough_present:True)
+- im [coughing](cough_present:True)
 
 ## intent:affirm
 - correct
@@ -68,11 +68,11 @@
 - no this does not work for me
 
 ## intent:inform
-- i have got a [fever](fever_present:yes)
-- my temperature is [high](fever_present:yes)
-- i have a [cough](cough_present:yes)
-- im [coughing](cough_present:yes)
-- im [coughing](cough_present:yes)
+- i have got a [fever](fever_present:True)
+- my temperature is [high](fever_present:True)
+- i have a [cough](cough_present:True)
+- im [coughing](cough_present:True)
+- im [coughing](cough_present:True)
 
 ## intent:thankyou
 - um thank you good bye

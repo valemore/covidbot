@@ -27,8 +27,14 @@ class SymptomForm(FormAction):
             or a list of them, where a first match will be picked"""
 
         return {
-            "fever_present": self.from_entity(entity="fever_present", not_intent="chitchat"),
-            "cough_present": self.from_entity(entity="cough_present", not_intent="chitchat")
+            "fever_present": [
+                self.from_entity(entity="fever_present", not_intent="chitchat"),
+                self.from_intent(intent='affirm', value=True),
+                self.from_intent(intent='deny', value=False)],
+            "cough_present": [
+                self.from_entity(entity="cough_present", not_intent="chitchat"),
+                self.from_intent(intent='affirm', value=True),
+                self.from_intent(intent='deny', value=False)],
         }
 
     def submit(
@@ -43,6 +49,4 @@ class SymptomForm(FormAction):
         # utter submit template
         dispatcher.utter_message(template="utter_submit")
         return []
-    
-    def validate():
-        pass # BUG!
+
