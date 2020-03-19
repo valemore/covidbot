@@ -36,7 +36,14 @@
 - my temperature is [high](fever_present:True)
 - i have a [cough](cough_present:True)
 - im [coughing](cough_present:True)
-- im [coughing](cough_present:True)
+- i have [limb pain](limb_pain_present:True)
+- my [limbs hurt](limb_pain_present:True)
+- my [joints hurt](limb_pain_present:True)
+- my [neck hurts](limb_pain_present:True)
+- my [arms hurt](limb_pain_present:True)
+- my [back hurts](limb_pain_present:True)
+- i have a [sore throat](sore_throat_present:True)
+- my throat is [scratching](sore_throat_present:True)
 
 ## intent:affirm
 - correct
@@ -72,7 +79,14 @@
 - my temperature is [high](fever_present:True)
 - i have a [cough](cough_present:True)
 - im [coughing](cough_present:True)
-- im [coughing](cough_present:True)
+- i have [limb pain](limb_pain_present:True)
+- my [limbs hurt](limb_pain_present:True)
+- my [joints hurt](limb_pain_present:True)
+- my [neck hurts](limb_pain_present:True)
+- my [arms hurt](limb_pain_present:True)
+- my [back hurts](limb_pain_present:True)
+- i have a [sore throat](sore_throat_present:True)
+- my throat is [scratching](sore_throat_present:True)
 
 ## intent:thankyou
 - um thank you good bye

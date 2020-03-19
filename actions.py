@@ -17,7 +17,7 @@ class SymptomForm(FormAction):
     def required_slots(tracker: Tracker) -> List[Text]:
         """A list of required slots that the form has to fill"""
 
-        return ["fever_present", "cough_present"]
+        return ["fever_present", "cough_present", "limb_pain_present", "sore_throat_present"]
 
     def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict]]]:
         """A dictionary to map required slots to
@@ -35,6 +35,14 @@ class SymptomForm(FormAction):
                 self.from_entity(entity="cough_present", not_intent="chitchat"),
                 self.from_intent(intent='affirm', value=True),
                 self.from_intent(intent='deny', value=False)],
+            "limb_pain_present": [
+                self.from_entity(entity="limb_pain_present", not_intent="chitchat"),
+                self.from_intent(intent='affirm', value=True),
+                self.from_intent(intent='deny', value=False)],
+            "sore_throat_present": [
+                self.from_entity(entity="sore_throat_present", not_intent="chitchat"),
+                self.from_intent(intent='affirm', value=True),
+                self.from_intent(intent='deny', value=False)]
         }
 
     def submit(

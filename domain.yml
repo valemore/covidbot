@@ -20,16 +20,26 @@ slots:
     type: unfeaturized
   cough_present:
     type: unfeaturized
+  limb_pain_present:
+    type: unfeaturized
+  sore_throat_present:
+    type: unfeaturized
 
 responses:
   utter_ask_fever_present:
     - text: "do you have a fever?"
   utter_ask_cough_present:
     - text: "do you have a cough?"
+  utter_ask_limb_pain_present:
+    - text: "do you have limb pain?"
+  utter_ask_sore_throat_present:
+    - text: "do you have a sore throat?"
   utter_slots_values:
     - text: "It looks like you have the following symptoms:\n
              - cough: {cough_present}\n
-             - fever: {fever_present}"
+             - fever: {fever_present}\n
+             - limb pain: {limb_pain_present}\n
+             - sore throat: {sore_throat_present}"
   utter_noworries:
     - text: "you are welcome :)"
   utter_chitchat:
