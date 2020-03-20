@@ -5,8 +5,8 @@
     - symptom_form
     - form{"name": "symptom_form"}
     - form{"name": null}
-    - utter_slots_values
     - slot{"symptoms_present": true}
+    - utter_slots_values
     - utter_self_isolate
 * thankyou
     - utter_noworries
@@ -18,8 +18,8 @@
     - symptom_form
     - form{"name": "symptom_form"}
     - form{"name": null}
-    - utter_slots_values
     - slot{"symptoms_present": false}
+    - utter_slots_values
     - utter_safe
 * thankyou
     - utter_noworries
