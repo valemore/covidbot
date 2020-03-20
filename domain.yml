@@ -24,6 +24,8 @@ slots:
     type: unfeaturized
   sore_throat_present:
     type: unfeaturized
+  symptoms_present:
+    type: bool
 
 responses:
   utter_ask_fever_present:
@@ -40,6 +42,10 @@ responses:
              - fever: {fever_present}\n
              - limb pain: {limb_pain_present}\n
              - sore throat: {sore_throat_present}"
+  utter_self_isolate:
+    - text: "Since you are showing more than one symptom, you should self-isolate!"
+  utter_safe:
+    - text: "You are showing no symptoms. Stay safe and practice social distancing."
   utter_noworries:
     - text: "you are welcome :)"
   utter_chitchat:

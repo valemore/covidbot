@@ -1,6 +1,7 @@
 from typing import Dict, Text, Any, List, Union, Optional
 
 from rasa_sdk import Tracker
+from rasa_sdk.events import SlotSet
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.forms import FormAction
 
@@ -54,7 +55,16 @@ class SymptomForm(FormAction):
         """Define what the form has to do
             after all required slots are filled"""
 
+        fever_present = tracker.get_slot("fever_present")
+        cough_present = tracker.get_slot("cough_present")
+        limb_pain_present = tracker.get_slot("limb_pain_present")
+        sore_throat_present = tracker.get_slot("sore_throat_present")
+
+        n_symptoms = sum(bool(s) for s in [fever_present, cough_present, limb_pain_present, sore_throat_present])
+        symptoms_present = True if n_symptoms > 1 else False
+        
+        dispatcher.utter_message(f"You have {n_symptoms} symptoms {symptoms_present}")
+
         # utter submit template
         dispatcher.utter_message(template="utter_submit")
-        return []
-
+        return [SlotSet("symptoms_present", symptoms_present)]
