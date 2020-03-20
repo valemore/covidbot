@@ -1,4 +1,4 @@
-## happy path, symptoms
+## happy path, symptoms, no exposure
 * greet
     - utter_greet
 * check_symptoms
@@ -7,7 +7,24 @@
     - form{"name": null}
     - slot{"symptoms_present": true}
     - utter_slots_values
+    - utter_ask_exposure
+    * deny
     - utter_self_isolate
+* thankyou
+    - utter_noworries
+
+## happy path, symptoms, no exposure
+* greet
+    - utter_greet
+* check_symptoms
+    - symptom_form
+    - form{"name": "symptom_form"}
+    - form{"name": null}
+    - slot{"symptoms_present": true}
+    - utter_slots_values
+    - utter_ask_exposure
+    * affirm
+    - utter_seek_help
 * thankyou
     - utter_noworries
 

@@ -44,6 +44,10 @@ responses:
     - text: "Since you are showing more than one symptom, you should self-isolate!"
   utter_safe:
     - text: "You are showing no symptoms. Stay safe and practice social distancing."
+  utter_ask_exposure:
+    - text: "Have you had contact with someone who tested positive for Corona virus in the past 14 days?"
+  utter_seek_help:
+    - text: "You should get tested for Covid-19. Please contact 030 9028 28 28"
   utter_noworries:
     - text: "you are welcome :)"
   utter_chitchat:
