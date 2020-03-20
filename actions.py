@@ -62,9 +62,14 @@ class SymptomForm(FormAction):
 
         n_symptoms = sum(bool(s) for s in [fever_present, cough_present, limb_pain_present, sore_throat_present])
         symptoms_present = True if n_symptoms > 1 else False
+
+        symptoms_list = [s for s, sp in zip(["fever", "cough", "limb pain", "sore throat"],
+                                            [fever_present, cough_present, limb_pain_present, sore_throat_present])
+                                            if sp]
+        symptoms_list_text = ', '.join(symptoms_list)
         
         dispatcher.utter_message(f"You have {n_symptoms} symptoms {symptoms_present}")
 
         # utter submit template
         dispatcher.utter_message(template="utter_submit")
-        return [SlotSet("symptoms_present", symptoms_present)]
+        return [SlotSet("symptoms_present", symptoms_present), SlotSet("symptoms_list", symptoms_list_text)]

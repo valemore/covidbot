@@ -26,6 +26,8 @@ slots:
     type: unfeaturized
   symptoms_present:
     type: bool
+  symptoms_list:
+    type: unfeaturized
 
 responses:
   utter_ask_fever_present:
@@ -37,11 +39,7 @@ responses:
   utter_ask_sore_throat_present:
     - text: "do you have a sore throat?"
   utter_slots_values:
-    - text: "It looks like you have the following symptoms:\n
-             - cough: {cough_present}\n
-             - fever: {fever_present}\n
-             - limb pain: {limb_pain_present}\n
-             - sore throat: {sore_throat_present}"
+    - text: "It looks like you have the following symptoms: {symptoms_list}"
   utter_self_isolate:
     - text: "Since you are showing more than one symptom, you should self-isolate!"
   utter_safe:
